@@ -3,6 +3,8 @@ Bitly for iOS
 
 URL Shortener using Bitly with AFNetworking
 
+<img src="https://raw.github.com/brennanMKE/BitlyForiOS/master/URLShortener.png" style="width: 220px; float: right; margin: 10px;" />
+
 ### How to Use
 
 You have 2 options for using the URL Shortener. First is to simply copy the files from the Common folder, which just includes 2 files, directly into your Xcode project. Second you could add this GitHub project as a submodule to your project and add the 2 files from the Common folder. Then handle the requirements below.
