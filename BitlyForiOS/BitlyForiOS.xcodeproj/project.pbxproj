@@ -34,7 +34,7 @@
 		2646BCEC178DF87000F4286C /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCE3178DF87000F4286C /* UIImageView+AFNetworking.m */; };
 		2646BCF0178DF8C400F4286C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BCEE178DF8C400F4286C /* MobileCoreServices.framework */; };
 		2646BCF1178DF8C400F4286C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BCEF178DF8C400F4286C /* SystemConfiguration.framework */; };
-		2646BCF4178DFFBC00F4286C /* SSTURLShortener.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCF3178DFFBC00F4286C /* SSTURLShortener.m */; };
+		2646BCF7178E081C00F4286C /* SSTURLShortener.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCF6178E081C00F4286C /* SSTURLShortener.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,8 +91,8 @@
 		2646BCE3178DF87000F4286C /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		2646BCEE178DF8C400F4286C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2646BCEF178DF8C400F4286C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		2646BCF2178DFFBC00F4286C /* SSTURLShortener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSTURLShortener.h; path = Common/SSTURLShortener.h; sourceTree = SOURCE_ROOT; };
-		2646BCF3178DFFBC00F4286C /* SSTURLShortener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSTURLShortener.m; path = Common/SSTURLShortener.m; sourceTree = SOURCE_ROOT; };
+		2646BCF5178E081C00F4286C /* SSTURLShortener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSTURLShortener.h; path = ../../Common/SSTURLShortener.h; sourceTree = "<group>"; };
+		2646BCF6178E081C00F4286C /* SSTURLShortener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSTURLShortener.m; path = ../../Common/SSTURLShortener.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,8 +205,8 @@
 		2646BCCC178DF73600F4286C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2646BCF2178DFFBC00F4286C /* SSTURLShortener.h */,
-				2646BCF3178DFFBC00F4286C /* SSTURLShortener.m */,
+				2646BCF5178E081C00F4286C /* SSTURLShortener.h */,
+				2646BCF6178E081C00F4286C /* SSTURLShortener.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 				2646BCEA178DF87000F4286C /* AFURLConnectionOperation.m in Sources */,
 				2646BCEB178DF87000F4286C /* AFXMLRequestOperation.m in Sources */,
 				2646BCEC178DF87000F4286C /* UIImageView+AFNetworking.m in Sources */,
-				2646BCF4178DFFBC00F4286C /* SSTURLShortener.m in Sources */,
+				2646BCF7178E081C00F4286C /* SSTURLShortener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
