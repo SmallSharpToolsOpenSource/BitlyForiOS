@@ -1,9 +1,9 @@
 Bitly for iOS
 =============
 
-URL Shortener using Bitly with AFNetworking
-
 <img src="https://raw.github.com/brennanMKE/BitlyForiOS/master/URLShortener.png" width="220" align="right" />
+
+URL Shortener using Bitly with AFNetworking
 
 ### How to Use
 
