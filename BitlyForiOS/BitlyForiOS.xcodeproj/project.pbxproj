@@ -549,6 +549,7 @@
 				2646BCC8178DF72800F4286C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2646BCC9178DF72800F4286C /* Build configuration list for PBXNativeTarget "BitlyForiOSTests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +558,7 @@
 				2646BCCB178DF72800F4286C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

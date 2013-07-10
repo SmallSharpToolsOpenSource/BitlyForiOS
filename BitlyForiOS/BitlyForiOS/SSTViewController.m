@@ -10,6 +10,10 @@
 
 #import "SSTURLShortener.h"
 
+NSString * const SSTUsername = @"username";
+NSString * const SSTApiKey = @"apiKey";
+NSString * const SSTURL = @"url";
+
 @interface SSTViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -22,11 +26,11 @@
 
 @implementation SSTViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     self.shortenedURLLabel.text = nil;
+    [self loadSettings];
 }
 
 #pragma mark - User Actions
@@ -34,6 +38,7 @@
 
 - (IBAction)shortenURLButtonTapped:(id)sender {
     [self.view endEditing:TRUE];
+    [self saveSettings];
     
     [SSTURLShortener shortenURL:[NSURL URLWithString:self.urlTextField.text]
                        username:self.usernameTextField.text
@@ -51,6 +56,37 @@
                     self.shortenedURLLabel.text = shortenedURL.absoluteString;
                 }
     }];
+}
+
+#pragma mark - Private
+#pragma mark -
+
+- (void)loadSettings {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *username = [defaults objectForKey:SSTUsername];
+    NSString *apiKey = [defaults objectForKey:SSTApiKey];
+    NSString *url = [defaults objectForKey:SSTURL];
+    
+    self.usernameTextField.text = username;
+    self.apiKeyTextField.text = apiKey;
+    self.urlTextField.text = url;
+}
+
+- (void)saveSettings {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if (self.usernameTextField.text.length) {
+        [defaults setObject:self.usernameTextField.text forKey:SSTUsername];
+    }
+    if (self.apiKeyTextField.text.length) {
+        [defaults setObject:self.apiKeyTextField.text forKey:SSTApiKey];
+    }
+    if (self.apiKeyTextField.text.length) {
+        [defaults setObject:self.urlTextField.text forKey:SSTURL];
+    }
+    
+    [defaults synchronize];
 }
 
 @end

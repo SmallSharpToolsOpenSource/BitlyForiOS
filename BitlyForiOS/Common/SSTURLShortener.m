@@ -41,6 +41,7 @@ NSString * const SSTBitlyURLKey                    = @"url";
                                           SSTBitlyURIParameter: url.absoluteString,
                                        SSTBitlyFormatParameter: SSTBitlyFormat
                                     }];
+    [request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     
     AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([responseObject isKindOfClass:[NSData class]]) {
