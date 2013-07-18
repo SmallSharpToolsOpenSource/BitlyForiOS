@@ -27,6 +27,10 @@ Well, who's not using AFNetworking at this point in 2013? It does what the built
 
 This project includes a working sample. You simply need to provide the original URL, username and API key from Bitly. After you use it the first time the values for username and API key will be stored as settings so you do not have to enter them every time. For your project you will likely use constants to provide the username and API key to the method to shorten the URL.
 
+### Next
+
+Current this project is using the Legacy API. Updating to the current OAuth service will be the next step to support the [current authentication](http://dev.bitly.com/authentication.html system). In the meantime the Legacy API is still supported.
+
 -----
 
 [SmallSharpTools.com](http://www.smallsharptools.com/) (SST)  
