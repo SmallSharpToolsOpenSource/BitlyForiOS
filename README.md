@@ -29,7 +29,7 @@ This project includes a working sample. You simply need to provide the original 
 
 ### Next
 
-Current this project is using the Legacy API. Updating to the current OAuth service will be the next step to support the [current authentication](http://dev.bitly.com/authentication.html system). In the meantime the Legacy API is still supported.
+Currently this project is using the Legacy API. Updating to the current OAuth service will be the next step to support the [current authentication](http://dev.bitly.com/authentication.html system). In the meantime the Legacy API is still supported.
 
 -----
 
