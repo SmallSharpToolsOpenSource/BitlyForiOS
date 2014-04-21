@@ -21,6 +21,7 @@ NSString * const SSTBitlyStatusCodeKey             = @"status_code";
 NSString * const SSTBitlyStatusTextKey             = @"status_txt";
 NSString * const SSTBitlyDataKey                   = @"data";
 NSString * const SSTBitlyURLKey                    = @"url";
+NSString * const SSTBitlyLongURLKey                = @"long_url";
 
 @implementation SSTURLShortener
 
@@ -34,40 +35,33 @@ NSString * const SSTBitlyURLKey                    = @"url";
         return;
     }
     
-    AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:SSTBitlyBaseURL]];
-    NSMutableURLRequest *request = [client requestWithMethod:@"GET" path:SSTBitlyShortenPath parameters:@{
-                                       SSTBitlyLoginParameter : username,
-                                      SSTBitlyApiKeyParameter : apiKey,
-                                          SSTBitlyURIParameter: url.absoluteString,
-                                       SSTBitlyFormatParameter: SSTBitlyFormat
-                                    }];
-    [request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+    AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:SSTBitlyBaseURL]];
+    NSDictionary *parameters =@{
+                                SSTBitlyLoginParameter : username,
+                                SSTBitlyApiKeyParameter : apiKey,
+                                SSTBitlyURIParameter: url.absoluteString,
+                                SSTBitlyFormatParameter: SSTBitlyFormat
+                                };
     
-    AFHTTPRequestOperation *operation = [client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSData class]]) {
-            NSData *data = (NSData *)responseObject;
+    [sessionManager GET:SSTBitlyShortenPath parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dictionary = (NSDictionary *)responseObject;
             
-            NSError *error;
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            
-            if (error && completionBlock) {
-                completionBlock(nil, error);
+            if ([@"OK" isEqualToString:dictionary[SSTBitlyStatusTextKey]]) {
+                NSString *longUrlString = dictionary[SSTBitlyDataKey][SSTBitlyLongURLKey];
+                NSCAssert([url.absoluteString isEqualToString:longUrlString], @"Returned Long URL must match given Long URL");
+                NSString *shortenedUrlString = dictionary[SSTBitlyDataKey][SSTBitlyURLKey];
+                NSURL *shortenedURL = [NSURL URLWithString:shortenedUrlString];
+                if (completionBlock) {
+                    completionBlock(shortenedURL, nil);
+                }
             }
             else {
-                NSInteger statusCode = [[json objectForKey:SSTBitlyStatusCodeKey] intValue];
-                if (statusCode != 200) {
-                    NSDictionary *userInfo = @{NSLocalizedDescriptionKey : [json objectForKey:SSTBitlyStatusTextKey]};
-                    NSError *error = [NSError errorWithDomain:@"Bitly" code:statusCode userInfo:userInfo];
-                    if (completionBlock) {
-                        completionBlock(nil, error);
-                    }
-                }
-                else {
-                    NSString *urlString = json[SSTBitlyDataKey][SSTBitlyURLKey];
-                    NSURL *shortenedURL = [NSURL URLWithString:urlString];
-                    if (completionBlock) {
-                        completionBlock(shortenedURL, nil);
-                    }
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey : dictionary[SSTBitlyStatusTextKey]};
+                NSInteger statusCode = [dictionary[SSTBitlyStatusCodeKey] integerValue];
+                NSError *error = [NSError errorWithDomain:@"Bitly" code:statusCode userInfo:userInfo];
+                if (completionBlock) {
+                    completionBlock(nil, error);
                 }
             }
         }
@@ -78,12 +72,11 @@ NSString * const SSTBitlyURLKey                    = @"url";
                 completionBlock(nil, error);
             }
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (completionBlock) {
             completionBlock(nil, error);
         }
     }];
-    [operation start];
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		085B1A9DB8B74483A7F4E8A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE5E28F75354A91A07D6083 /* libPods.a */; };
 		2646BC92178DF72800F4286C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BC91178DF72800F4286C /* UIKit.framework */; };
 		2646BC94178DF72800F4286C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BC93178DF72800F4286C /* Foundation.framework */; };
 		2646BC96178DF72800F4286C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BC95178DF72800F4286C /* CoreGraphics.framework */; };
@@ -18,20 +19,10 @@
 		2646BCA8178DF72800F4286C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2646BCA7178DF72800F4286C /* Default-568h@2x.png */; };
 		2646BCAB178DF72800F4286C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2646BCA9178DF72800F4286C /* MainStoryboard.storyboard */; };
 		2646BCAE178DF72800F4286C /* SSTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCAD178DF72800F4286C /* SSTViewController.m */; };
-		2646BCB6178DF72800F4286C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BCB5178DF72800F4286C /* SenTestingKit.framework */; };
 		2646BCB7178DF72800F4286C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BC91178DF72800F4286C /* UIKit.framework */; };
 		2646BCB8178DF72800F4286C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BC93178DF72800F4286C /* Foundation.framework */; };
 		2646BCC0178DF72800F4286C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2646BCBE178DF72800F4286C /* InfoPlist.strings */; };
 		2646BCC3178DF72800F4286C /* BitlyForiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCC2178DF72800F4286C /* BitlyForiOSTests.m */; };
-		2646BCE4178DF87000F4286C /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCD2178DF87000F4286C /* AFHTTPClient.m */; };
-		2646BCE5178DF87000F4286C /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCD4178DF87000F4286C /* AFHTTPRequestOperation.m */; };
-		2646BCE6178DF87000F4286C /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCD6178DF87000F4286C /* AFImageRequestOperation.m */; };
-		2646BCE7178DF87000F4286C /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCD8178DF87000F4286C /* AFJSONRequestOperation.m */; };
-		2646BCE8178DF87000F4286C /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCDA178DF87000F4286C /* AFNetworkActivityIndicatorManager.m */; };
-		2646BCE9178DF87000F4286C /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCDD178DF87000F4286C /* AFPropertyListRequestOperation.m */; };
-		2646BCEA178DF87000F4286C /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCDF178DF87000F4286C /* AFURLConnectionOperation.m */; };
-		2646BCEB178DF87000F4286C /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCE1178DF87000F4286C /* AFXMLRequestOperation.m */; };
-		2646BCEC178DF87000F4286C /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCE3178DF87000F4286C /* UIImageView+AFNetworking.m */; };
 		2646BCF0178DF8C400F4286C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BCEE178DF8C400F4286C /* MobileCoreServices.framework */; };
 		2646BCF1178DF8C400F4286C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BCEF178DF8C400F4286C /* SystemConfiguration.framework */; };
 		2646BCF7178E081C00F4286C /* SSTURLShortener.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCF6178E081C00F4286C /* SSTURLShortener.m */; };
@@ -64,35 +55,17 @@
 		2646BCAA178DF72800F4286C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2646BCAC178DF72800F4286C /* SSTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSTViewController.h; sourceTree = "<group>"; };
 		2646BCAD178DF72800F4286C /* SSTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSTViewController.m; sourceTree = "<group>"; };
-		2646BCB4178DF72800F4286C /* BitlyForiOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitlyForiOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2646BCB5178DF72800F4286C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2646BCB4178DF72800F4286C /* BitlyForiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitlyForiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2646BCBD178DF72800F4286C /* BitlyForiOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BitlyForiOSTests-Info.plist"; sourceTree = "<group>"; };
 		2646BCBF178DF72800F4286C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2646BCC1178DF72800F4286C /* BitlyForiOSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitlyForiOSTests.h; sourceTree = "<group>"; };
 		2646BCC2178DF72800F4286C /* BitlyForiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitlyForiOSTests.m; sourceTree = "<group>"; };
-		2646BCD1178DF87000F4286C /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		2646BCD2178DF87000F4286C /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
-		2646BCD3178DF87000F4286C /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		2646BCD4178DF87000F4286C /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		2646BCD5178DF87000F4286C /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		2646BCD6178DF87000F4286C /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
-		2646BCD7178DF87000F4286C /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		2646BCD8178DF87000F4286C /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		2646BCD9178DF87000F4286C /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		2646BCDA178DF87000F4286C /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		2646BCDB178DF87000F4286C /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		2646BCDC178DF87000F4286C /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		2646BCDD178DF87000F4286C /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		2646BCDE178DF87000F4286C /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		2646BCDF178DF87000F4286C /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		2646BCE0178DF87000F4286C /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		2646BCE1178DF87000F4286C /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		2646BCE2178DF87000F4286C /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		2646BCE3178DF87000F4286C /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		2646BCEE178DF8C400F4286C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2646BCEF178DF8C400F4286C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2646BCF5178E081C00F4286C /* SSTURLShortener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSTURLShortener.h; path = ../../Common/SSTURLShortener.h; sourceTree = "<group>"; };
 		2646BCF6178E081C00F4286C /* SSTURLShortener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSTURLShortener.m; path = ../../Common/SSTURLShortener.m; sourceTree = "<group>"; };
+		7FADBDEAFF3C4580ACA730EB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CAE5E28F75354A91A07D6083 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +78,7 @@
 				2646BC92178DF72800F4286C /* UIKit.framework in Frameworks */,
 				2646BC94178DF72800F4286C /* Foundation.framework in Frameworks */,
 				2646BC96178DF72800F4286C /* CoreGraphics.framework in Frameworks */,
+				085B1A9DB8B74483A7F4E8A3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2646BCB6178DF72800F4286C /* SenTestingKit.framework in Frameworks */,
 				2646BCB7178DF72800F4286C /* UIKit.framework in Frameworks */,
 				2646BCB8178DF72800F4286C /* Foundation.framework in Frameworks */,
 			);
@@ -128,6 +101,7 @@
 				2646BCBB178DF72800F4286C /* BitlyForiOSTests */,
 				2646BC90178DF72800F4286C /* Frameworks */,
 				2646BC8F178DF72800F4286C /* Products */,
+				7FADBDEAFF3C4580ACA730EB /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				2646BC8E178DF72800F4286C /* BitlyForiOS.app */,
-				2646BCB4178DF72800F4286C /* BitlyForiOSTests.octest */,
+				2646BCB4178DF72800F4286C /* BitlyForiOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,9 +120,9 @@
 				2646BC95178DF72800F4286C /* CoreGraphics.framework */,
 				2646BC93178DF72800F4286C /* Foundation.framework */,
 				2646BCEE178DF8C400F4286C /* MobileCoreServices.framework */,
-				2646BCB5178DF72800F4286C /* SenTestingKit.framework */,
 				2646BCEF178DF8C400F4286C /* SystemConfiguration.framework */,
 				2646BC91178DF72800F4286C /* UIKit.framework */,
+				CAE5E28F75354A91A07D6083 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,8 +130,6 @@
 		2646BC97178DF72800F4286C /* BitlyForiOS */ = {
 			isa = PBXGroup;
 			children = (
-				2646BCED178DF87900F4286C /* lib */,
-				2646BCD0178DF87000F4286C /* AFNetworking */,
 				2646BCCC178DF73600F4286C /* Common */,
 				2646BCA0178DF72800F4286C /* SSTAppDelegate.h */,
 				2646BCA1178DF72800F4286C /* SSTAppDelegate.m */,
@@ -211,40 +183,6 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
-		2646BCD0178DF87000F4286C /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				2646BCD1178DF87000F4286C /* AFHTTPClient.h */,
-				2646BCD2178DF87000F4286C /* AFHTTPClient.m */,
-				2646BCD3178DF87000F4286C /* AFHTTPRequestOperation.h */,
-				2646BCD4178DF87000F4286C /* AFHTTPRequestOperation.m */,
-				2646BCD5178DF87000F4286C /* AFImageRequestOperation.h */,
-				2646BCD6178DF87000F4286C /* AFImageRequestOperation.m */,
-				2646BCD7178DF87000F4286C /* AFJSONRequestOperation.h */,
-				2646BCD8178DF87000F4286C /* AFJSONRequestOperation.m */,
-				2646BCD9178DF87000F4286C /* AFNetworkActivityIndicatorManager.h */,
-				2646BCDA178DF87000F4286C /* AFNetworkActivityIndicatorManager.m */,
-				2646BCDB178DF87000F4286C /* AFNetworking.h */,
-				2646BCDC178DF87000F4286C /* AFPropertyListRequestOperation.h */,
-				2646BCDD178DF87000F4286C /* AFPropertyListRequestOperation.m */,
-				2646BCDE178DF87000F4286C /* AFURLConnectionOperation.h */,
-				2646BCDF178DF87000F4286C /* AFURLConnectionOperation.m */,
-				2646BCE0178DF87000F4286C /* AFXMLRequestOperation.h */,
-				2646BCE1178DF87000F4286C /* AFXMLRequestOperation.m */,
-				2646BCE2178DF87000F4286C /* UIImageView+AFNetworking.h */,
-				2646BCE3178DF87000F4286C /* UIImageView+AFNetworking.m */,
-			);
-			name = AFNetworking;
-			path = ../../lib/AFNetworking/AFNetworking;
-			sourceTree = "<group>";
-		};
-		2646BCED178DF87900F4286C /* lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = lib;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -252,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2646BCC6178DF72800F4286C /* Build configuration list for PBXNativeTarget "BitlyForiOS" */;
 			buildPhases = (
+				43DED3E76055443396DCDAAA /* Check Pods Manifest.lock */,
 				2646BC8A178DF72800F4286C /* Sources */,
 				2646BC8B178DF72800F4286C /* Frameworks */,
 				2646BC8C178DF72800F4286C /* Resources */,
+				88CDB5A4BA8044AD88921151 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,8 +221,8 @@
 			);
 			name = BitlyForiOSTests;
 			productName = BitlyForiOSTests;
-			productReference = 2646BCB4178DF72800F4286C /* BitlyForiOSTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 2646BCB4178DF72800F4286C /* BitlyForiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -291,6 +231,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SST;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "SmallSharpTools LLC";
 			};
@@ -349,6 +290,36 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		43DED3E76055443396DCDAAA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		88CDB5A4BA8044AD88921151 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -359,15 +330,6 @@
 				2646BC9E178DF72800F4286C /* main.m in Sources */,
 				2646BCA2178DF72800F4286C /* SSTAppDelegate.m in Sources */,
 				2646BCAE178DF72800F4286C /* SSTViewController.m in Sources */,
-				2646BCE4178DF87000F4286C /* AFHTTPClient.m in Sources */,
-				2646BCE5178DF87000F4286C /* AFHTTPRequestOperation.m in Sources */,
-				2646BCE6178DF87000F4286C /* AFImageRequestOperation.m in Sources */,
-				2646BCE7178DF87000F4286C /* AFJSONRequestOperation.m in Sources */,
-				2646BCE8178DF87000F4286C /* AFNetworkActivityIndicatorManager.m in Sources */,
-				2646BCE9178DF87000F4286C /* AFPropertyListRequestOperation.m in Sources */,
-				2646BCEA178DF87000F4286C /* AFURLConnectionOperation.m in Sources */,
-				2646BCEB178DF87000F4286C /* AFXMLRequestOperation.m in Sources */,
-				2646BCEC178DF87000F4286C /* UIImageView+AFNetworking.m in Sources */,
 				2646BCF7178E081C00F4286C /* SSTURLShortener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +438,7 @@
 		};
 		2646BCC7178DF72800F4286C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FADBDEAFF3C4580ACA730EB /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitlyForiOS/BitlyForiOS-Prefix.pch";
@@ -487,6 +450,7 @@
 		};
 		2646BCC8178DF72800F4286C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FADBDEAFF3C4580ACA730EB /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitlyForiOS/BitlyForiOS-Prefix.pch";
@@ -503,13 +467,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitlyForiOS/BitlyForiOS-Prefix.pch";
 				INFOPLIST_FILE = "BitlyForiOSTests/BitlyForiOSTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -520,13 +484,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitlyForiOS/BitlyForiOS-Prefix.pch";
 				INFOPLIST_FILE = "BitlyForiOSTests/BitlyForiOSTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

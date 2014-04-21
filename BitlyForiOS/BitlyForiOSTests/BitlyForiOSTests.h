@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 SmallSharpTools LLC. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface BitlyForiOSTests : SenTestCase
+@interface BitlyForiOSTests : XCTestCase
 
 @end
