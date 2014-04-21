@@ -17,7 +17,7 @@ The `SSTURLShortener` class has a single static method which takes the original 
 
 ## CocoaPods
 
-CircleButtons is available through [CocoaPods](http://cocoapods.org), to install
+BitlyForiOS is available through [CocoaPods](http://cocoapods.org), to install
 it simply add the following line to your Podfile:
 
     pod "BitlyForiOS"
@@ -33,7 +33,8 @@ URL Shortener uses [AFNetworking](http://afnetworking.com/) which is available o
 
 ### Why AFNetworking?
 
-Well, who's not using AFNetworking at this point in 2013? It does what the built-in networking API does not and makes working with REST APIs very easy. In iOS 7 that will change which includes new options for the Networking API. Ultimately AFNetworking will be replaced by these new options.
+AFNetworking automatically handles url encoding and parses the JSON results so no additional work is necessary. This library also
+uses AFNetworking 2.0. Since most projects already use AFNetworking it made sense to leverage it.
 
 ### Sample Project
 
