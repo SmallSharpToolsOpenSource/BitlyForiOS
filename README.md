@@ -15,6 +15,18 @@ Everything is in a single class named `SSTURLShortener` which you can find in th
 
 The `SSTURLShortener` class has a single static method which takes the original URL, username, API key and a completion block. The username and API key come from your Bitly account. (See Legacy API Key under [Advanced Settings](https://bitly.com/a/settings/advanced)) If the same URL is shortened it may benefit from the return value already being cached as the request uses the `NSURLRequestReturnCacheDataElseLoad` caching policy.
 
+## CocoaPods
+
+CircleButtons is available through [CocoaPods](http://cocoapods.org), to install
+it simply add the following line to your Podfile:
+
+    pod "BitlyForiOS"
+
+or
+
+    platform :ios, "7.0"
+    pod 'BitlyForiOS', :git => 'https://github.com/brennanMKE/BitlyForiOS.git', :tag => '0.0.1'
+
 ### Requirements
 
 URL Shortener uses [AFNetworking](http://afnetworking.com/) which is available on [GitHub](https://github.com/AFNetworking/AFNetworking). Follow instructions for AFNetworking to include it in your project.
@@ -31,7 +43,12 @@ This project includes a working sample. You simply need to provide the original 
 
 Currently this project is using the Legacy API. Updating to the current OAuth service will be the next step to support the [current authentication system](http://dev.bitly.com/authentication.html). In the meantime the Legacy API is still supported.
 
+## License
+
+BitlyForiOS is available under the Apache 2.0 license. See the LICENSE file for more info.
+
 -----
 
-[SmallSharpTools.com](http://www.smallsharptools.com/) (SST)  
-Brennan Stehling
+Brennan Stehling  
+[SmallSharpTools](http://www.smallsharptools.com/)  
+[@smallsharptools](https://twitter.com/smallsharptools) (Twitter)  
