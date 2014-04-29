@@ -49,6 +49,7 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
             
             if ([@"OK" isEqualToString:dictionary[SSTBitlyStatusTextKey]]) {
                 NSString *longUrlString = dictionary[SSTBitlyDataKey][SSTBitlyLongURLKey];
+#pragma unused (longUrlString)
                 NSCAssert([url.absoluteString isEqualToString:longUrlString], @"Returned Long URL must match given Long URL");
                 NSString *shortenedUrlString = dictionary[SSTBitlyDataKey][SSTBitlyURLKey];
                 NSURL *shortenedURL = [NSURL URLWithString:shortenedUrlString];
