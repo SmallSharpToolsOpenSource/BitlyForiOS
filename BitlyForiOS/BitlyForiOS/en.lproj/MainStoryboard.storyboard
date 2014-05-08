@@ -1,48 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="SSTViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JPe-vE-xCz"/>
+                        <viewControllerLayoutGuide type="bottom" id="5dC-Pf-KRV"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bitly Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Je-bZ-THv">
+                                <rect key="frame" x="20" y="72" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bitly API Key" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KLa-9O-Ruq">
+                                <rect key="frame" x="20" y="110" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGr-Yr-sOa">
+                                <rect key="frame" x="20" y="148" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nku-Lv-oos">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <rect key="frame" x="20" y="186" width="280" height="30"/>
                                 <state key="normal" title="Shorten URL">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="shortenURLButtonTapped:" destination="2" eventType="touchUpInside" id="Eec-5x-EEO"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGr-Yr-sOa">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shortened URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9i-vk-oP1">
+                                <rect key="frame" x="20" y="224" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="URL Shortener" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMl-O8-Uoe">
+                                <rect key="frame" x="20" y="20" width="280" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="A9G-KE-VOv"/>
                                 </constraints>
@@ -53,24 +59,24 @@
                         </subviews>
                         <color key="backgroundColor" red="0.22739714817880977" green="0.21488997203796864" blue="0.23084741709183676" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="KLa-9O-Ruq" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2sX-3D-h1q"/>
-                            <constraint firstItem="Nku-Lv-oos" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3d2-3W-Zrs"/>
-                            <constraint firstItem="3Je-bZ-THv" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7Yw-Sg-FDI"/>
-                            <constraint firstAttribute="trailing" secondItem="t9i-vk-oP1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7tN-AJ-5XJ"/>
-                            <constraint firstItem="qGr-Yr-sOa" firstAttribute="top" secondItem="KLa-9O-Ruq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Axt-0A-MHt"/>
-                            <constraint firstItem="tMl-O8-Uoe" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BNb-gW-40Q"/>
-                            <constraint firstItem="qGr-Yr-sOa" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Dih-V3-r8h"/>
-                            <constraint firstAttribute="trailing" secondItem="Nku-Lv-oos" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="E1j-oE-Sa0"/>
-                            <constraint firstAttribute="trailing" secondItem="tMl-O8-Uoe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ENX-Fw-tMC"/>
-                            <constraint firstItem="t9i-vk-oP1" firstAttribute="top" secondItem="Nku-Lv-oos" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FYY-Lu-yeb"/>
-                            <constraint firstItem="tMl-O8-Uoe" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="INr-4U-AXi"/>
-                            <constraint firstAttribute="trailing" secondItem="3Je-bZ-THv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Pkc-8m-giq"/>
-                            <constraint firstItem="KLa-9O-Ruq" firstAttribute="top" secondItem="3Je-bZ-THv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SeV-9f-Pwk"/>
-                            <constraint firstItem="Nku-Lv-oos" firstAttribute="top" secondItem="qGr-Yr-sOa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="axm-pw-9QB"/>
-                            <constraint firstItem="t9i-vk-oP1" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bqK-jM-kXZ"/>
-                            <constraint firstItem="3Je-bZ-THv" firstAttribute="top" secondItem="tMl-O8-Uoe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gHa-mb-oD6"/>
-                            <constraint firstAttribute="trailing" secondItem="KLa-9O-Ruq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mCz-f9-fim"/>
-                            <constraint firstAttribute="trailing" secondItem="qGr-Yr-sOa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wTx-JD-W8q"/>
+                            <constraint firstItem="KLa-9O-Ruq" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" id="2sX-3D-h1q"/>
+                            <constraint firstItem="Nku-Lv-oos" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" id="3d2-3W-Zrs"/>
+                            <constraint firstItem="3Je-bZ-THv" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" id="7Yw-Sg-FDI"/>
+                            <constraint firstAttribute="trailing" secondItem="t9i-vk-oP1" secondAttribute="trailing" constant="20" symbolic="YES" id="7tN-AJ-5XJ"/>
+                            <constraint firstItem="qGr-Yr-sOa" firstAttribute="top" secondItem="KLa-9O-Ruq" secondAttribute="bottom" constant="8" symbolic="YES" id="Axt-0A-MHt"/>
+                            <constraint firstItem="tMl-O8-Uoe" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" id="BNb-gW-40Q"/>
+                            <constraint firstItem="qGr-Yr-sOa" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" id="Dih-V3-r8h"/>
+                            <constraint firstAttribute="trailing" secondItem="Nku-Lv-oos" secondAttribute="trailing" constant="20" symbolic="YES" id="E1j-oE-Sa0"/>
+                            <constraint firstAttribute="trailing" secondItem="tMl-O8-Uoe" secondAttribute="trailing" constant="20" symbolic="YES" id="ENX-Fw-tMC"/>
+                            <constraint firstItem="t9i-vk-oP1" firstAttribute="top" secondItem="Nku-Lv-oos" secondAttribute="bottom" constant="8" symbolic="YES" id="FYY-Lu-yeb"/>
+                            <constraint firstItem="tMl-O8-Uoe" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" id="INr-4U-AXi"/>
+                            <constraint firstAttribute="trailing" secondItem="3Je-bZ-THv" secondAttribute="trailing" constant="20" symbolic="YES" id="Pkc-8m-giq"/>
+                            <constraint firstItem="KLa-9O-Ruq" firstAttribute="top" secondItem="3Je-bZ-THv" secondAttribute="bottom" constant="8" symbolic="YES" id="SeV-9f-Pwk"/>
+                            <constraint firstItem="Nku-Lv-oos" firstAttribute="top" secondItem="qGr-Yr-sOa" secondAttribute="bottom" constant="8" symbolic="YES" id="axm-pw-9QB"/>
+                            <constraint firstItem="t9i-vk-oP1" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" id="bqK-jM-kXZ"/>
+                            <constraint firstItem="3Je-bZ-THv" firstAttribute="top" secondItem="tMl-O8-Uoe" secondAttribute="bottom" constant="8" symbolic="YES" id="gHa-mb-oD6"/>
+                            <constraint firstAttribute="trailing" secondItem="KLa-9O-Ruq" secondAttribute="trailing" constant="20" symbolic="YES" id="mCz-f9-fim"/>
+                            <constraint firstAttribute="trailing" secondItem="qGr-Yr-sOa" secondAttribute="trailing" constant="20" symbolic="YES" id="wTx-JD-W8q"/>
                         </constraints>
                     </view>
                     <connections>
@@ -85,22 +91,6 @@
             </objects>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SSTViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="shortenURLButtonTapped:"/>
-                <relationship kind="outlet" name="apiKeyTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="shortenButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="shortenedURLLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="urlTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
