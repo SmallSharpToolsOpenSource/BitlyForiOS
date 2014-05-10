@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "BitlyForiOS"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Bitly link shortener."
 
   s.description  = <<-DESC
@@ -17,11 +17,11 @@ A Bitly link shortener which uses AFNetworking 2.0 to handle the GET request and
   s.social_media_url = "http://twitter.com/smallsharptools"
 
   s.platform     = :ios, '6.0'
-  s.source       = { :git => "https://github.com/brennanMKE/BitlyForiOS.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/brennanMKE/BitlyForiOS.git", :tag => "0.0.3" }
   s.source_files  = 'Common/**/*.{h,m}'
   s.requires_arc = true
 
-  s.dependency 'AFNetworking', '~> 2.0.0'
+  s.dependency 'AFNetworking', '~> 2.0'
 
 end
 

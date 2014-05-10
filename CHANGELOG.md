@@ -8,3 +8,7 @@ Podspec release.
 
 Eliminated warnings due to static analysis.
 
+## 0.0.3
+
+Expanding dependency scope for AFNetowrking
+
