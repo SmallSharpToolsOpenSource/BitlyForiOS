@@ -10,7 +10,7 @@
 
 #import "AFNetworking.h"
 
-NSString * const SSTBitlyBaseURL                   = @"http://api.bit.ly/";
+NSString * const SSTBitlyBaseURL                   = @"https://api-ssl.bitly.com/";
 NSString * const SSTBitlyShortenPath               = @"/v3/shorten";
 NSString * const SSTBitlyLoginParameter            = @"login";
 NSString * const SSTBitlyApiKeyParameter           = @"apiKey";
