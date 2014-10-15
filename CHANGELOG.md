@@ -12,3 +12,11 @@ Eliminated warnings due to static analysis.
 
 Expanding dependency scope for AFNetowrking
 
+## 1.0.0
+
+Updated to use SSL URL for API call
+
+## 1.1.0
+
+Added support to expaned a shortened URL
+
