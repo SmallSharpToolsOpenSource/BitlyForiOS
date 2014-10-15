@@ -64,7 +64,8 @@
 		2646BCEF178DF8C400F4286C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2646BCF5178E081C00F4286C /* SSTURLShortener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSTURLShortener.h; path = ../../Common/SSTURLShortener.h; sourceTree = "<group>"; };
 		2646BCF6178E081C00F4286C /* SSTURLShortener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSTURLShortener.m; path = ../../Common/SSTURLShortener.m; sourceTree = "<group>"; };
-		7FADBDEAFF3C4580ACA730EB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		7D642B18C26F833DBDEE5DCC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C9947E9A0134F4B7768CF62B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CAE5E28F75354A91A07D6083 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,7 +102,7 @@
 				2646BCBB178DF72800F4286C /* BitlyForiOSTests */,
 				2646BC90178DF72800F4286C /* Frameworks */,
 				2646BC8F178DF72800F4286C /* Products */,
-				7FADBDEAFF3C4580ACA730EB /* Pods.xcconfig */,
+				C4236C19712241463AC70246 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +182,15 @@
 				2646BCF6178E081C00F4286C /* SSTURLShortener.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		C4236C19712241463AC70246 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9947E9A0134F4B7768CF62B /* Pods.debug.xcconfig */,
+				7D642B18C26F833DBDEE5DCC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,7 +327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -438,7 +448,7 @@
 		};
 		2646BCC7178DF72800F4286C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FADBDEAFF3C4580ACA730EB /* Pods.xcconfig */;
+			baseConfigurationReference = C9947E9A0134F4B7768CF62B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitlyForiOS/BitlyForiOS-Prefix.pch";
@@ -450,7 +460,7 @@
 		};
 		2646BCC8178DF72800F4286C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FADBDEAFF3C4580ACA730EB /* Pods.xcconfig */;
+			baseConfigurationReference = 7D642B18C26F833DBDEE5DCC /* Pods.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitlyForiOS/BitlyForiOS-Prefix.pch";

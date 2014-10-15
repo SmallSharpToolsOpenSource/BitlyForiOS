@@ -54,6 +54,8 @@ NSString * const SSTURL = @"url";
                 }
                 else {
                     self.shortenedURLLabel.text = shortenedURL.absoluteString;
+                    
+                    [self expandShortenedURL:shortenedURL];
                 }
     }];
 }
@@ -87,6 +89,26 @@ NSString * const SSTURL = @"url";
     }
     
     [defaults synchronize];
+}
+
+- (void)expandShortenedURL:(NSURL *)shortenedURL {
+    [SSTURLShortener expandURL:shortenedURL
+                      username:self.usernameTextField.text
+                        apiKey:self.apiKeyTextField.text
+           withCompletionBlock:^(NSURL *expandedURL, NSError *error) {
+        if (error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                message:error.userInfo[NSLocalizedDescriptionKey]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        }
+        else {
+            NSLog(@"Expanded URL: %@", expandedURL.absoluteString);
+        }
+    }];
+    
 }
 
 @end
