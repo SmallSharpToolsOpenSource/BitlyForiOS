@@ -12,7 +12,7 @@
 
 NSString * const SSTBitlyBaseURL                   = @"https://api-ssl.bitly.com/";
 NSString * const SSTBitlyShortenPath               = @"/v3/shorten";
-NSString * const SSTBitlyExpandPath               = @"/v3/expand";
+NSString * const SSTBitlyExpandPath                = @"/v3/expand";
 NSString * const SSTBitlyLoginParameter            = @"login";
 NSString * const SSTBitlyApiKeyParameter           = @"apiKey";
 NSString * const SSTBitlyURIParameter              = @"uri";
@@ -138,6 +138,5 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
         }
     }];
 }
-
 
 @end
