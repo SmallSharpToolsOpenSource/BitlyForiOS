@@ -24,7 +24,7 @@ it simply add the following line to your Podfile:
 
 or
 
-    pod 'BitlyForiOS', :git => 'https://github.com/brennanMKE/BitlyForiOS.git', :tag => '1.1'
+    pod 'BitlyForiOS', :git => 'https://github.com/brennanMKE/BitlyForiOS.git', :tag => '1.2'
 
 ### Requirements
 

@@ -20,3 +20,7 @@ Updated to use SSL URL for API call
 
 Added support to expaned a shortened URL
 
+## 1.2.0
+
+Added support for using an access token
+

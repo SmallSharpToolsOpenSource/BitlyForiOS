@@ -12,12 +12,14 @@
 
 NSString * const SSTUsername = @"username";
 NSString * const SSTApiKey = @"apiKey";
+NSString * const SSTAccessToken = @"accessToken";
 NSString * const SSTURL = @"url";
 
 @interface SSTViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *apiKeyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *accessTokenTextField;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIButton *shortenButton;
 @property (weak, nonatomic) IBOutlet UILabel *shortenedURLLabel;
@@ -40,24 +42,21 @@ NSString * const SSTURL = @"url";
     [self.view endEditing:TRUE];
     [self saveSettings];
     
-    [SSTURLShortener shortenURL:[NSURL URLWithString:self.urlTextField.text]
-                       username:self.usernameTextField.text
-                         apiKey:self.apiKeyTextField.text
-            withCompletionBlock:^(NSURL *shortenedURL, NSError *error) {
-                if (error) {
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                        message:error.userInfo[NSLocalizedDescriptionKey]
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"OK"
-                                                              otherButtonTitles:nil];
-                    [alertView show];
-                }
-                else {
-                    self.shortenedURLLabel.text = shortenedURL.absoluteString;
-                    
-                    [self expandShortenedURL:shortenedURL];
-                }
-    }];
+    if (self.accessTokenTextField.text.length) {
+        [SSTURLShortener shortenURL:[NSURL URLWithString:self.urlTextField.text]
+                        accessToken:self.accessTokenTextField.text
+                withCompletionBlock:^(NSURL *shortenedURL, NSError *error) {
+            [self handleShortenedURL:shortenedURL error:error];
+        }];
+    }
+    else {
+        [SSTURLShortener shortenURL:[NSURL URLWithString:self.urlTextField.text]
+                           username:self.usernameTextField.text
+                             apiKey:self.apiKeyTextField.text
+                withCompletionBlock:^(NSURL *shortenedURL, NSError *error) {
+            [self handleShortenedURL:shortenedURL error:error];
+        }];
+    }
 }
 
 #pragma mark - Private
@@ -68,10 +67,12 @@ NSString * const SSTURL = @"url";
     
     NSString *username = [defaults objectForKey:SSTUsername];
     NSString *apiKey = [defaults objectForKey:SSTApiKey];
+    NSString *accessToken = [defaults objectForKey:SSTAccessToken];
     NSString *url = [defaults objectForKey:SSTURL];
     
     self.usernameTextField.text = username;
     self.apiKeyTextField.text = apiKey;
+    self.accessTokenTextField.text = accessToken;
     self.urlTextField.text = url;
 }
 
@@ -84,6 +85,9 @@ NSString * const SSTURL = @"url";
     if (self.apiKeyTextField.text.length) {
         [defaults setObject:self.apiKeyTextField.text forKey:SSTApiKey];
     }
+    if (self.accessTokenTextField.text.length) {
+        [defaults setObject:self.accessTokenTextField.text forKey:SSTAccessToken];
+    }
     if (self.apiKeyTextField.text.length) {
         [defaults setObject:self.urlTextField.text forKey:SSTURL];
     }
@@ -92,23 +96,50 @@ NSString * const SSTURL = @"url";
 }
 
 - (void)expandShortenedURL:(NSURL *)shortenedURL {
-    [SSTURLShortener expandURL:shortenedURL
-                      username:self.usernameTextField.text
-                        apiKey:self.apiKeyTextField.text
-           withCompletionBlock:^(NSURL *expandedURL, NSError *error) {
-        if (error) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                message:error.userInfo[NSLocalizedDescriptionKey]
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-            [alertView show];
-        }
-        else {
-            NSLog(@"Expanded URL: %@", expandedURL.absoluteString);
-        }
-    }];
-    
+    if (self.accessTokenTextField.text.length) {
+        [SSTURLShortener expandURL:shortenedURL
+                       accessToken:self.accessTokenTextField.text
+               withCompletionBlock:^(NSURL *expandedURL, NSError *error) {
+            [self handleExpandedURL:expandedURL error:error];
+        }];
+    }
+    else {
+        [SSTURLShortener expandURL:shortenedURL
+                          username:self.usernameTextField.text
+                            apiKey:self.apiKeyTextField.text
+               withCompletionBlock:^(NSURL *expandedURL, NSError *error) {
+            [self handleExpandedURL:expandedURL error:error];
+        }];
+    }
+}
+
+- (void)handleExpandedURL:(NSURL *)expandedURL error:(NSError *)error {
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:error.userInfo[NSLocalizedDescriptionKey]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+    else {
+        NSLog(@"Expanded URL: %@", expandedURL.absoluteString);
+    }
+}
+
+- (void)handleShortenedURL:(NSURL *)shortenedURL error:(NSError *)error {
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:error.userInfo[NSLocalizedDescriptionKey]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+    else {
+        self.shortenedURLLabel.text = shortenedURL.absoluteString;
+        [self expandShortenedURL:shortenedURL];
+    }
 }
 
 @end
