@@ -8,8 +8,6 @@
 
 #import "SSTURLShortener.h"
 
-#import "AFNetworking.h"
-
 NSString * const SSTBitlyBaseURL                   = @"https://api-ssl.bitly.com/";
 NSString * const SSTBitlyShortenPath               = @"/v3/shorten";
 NSString * const SSTBitlyExpandPath                = @"/v3/expand";
@@ -30,14 +28,16 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
 
 @implementation SSTURLShortener
 
-+ (void)shortenURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^)(NSURL *shortenedURL, NSError *error))completionBlock {
+static NSURLSession *session;
+
++ (NSURLSessionTask *)shortenURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^ __nullable)(NSURL *shortenedURL, NSError *error))completionBlock {
     if (!url || !accessToken.length) {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"Required parameters not provided."};
         NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
         if (completionBlock) {
             completionBlock(nil, error);
         }
-        return;
+        return nil;
     }
     
     NSDictionary *parameters = @{
@@ -46,17 +46,17 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
                                  SSTBitlyFormatParameter: SSTBitlyFormat
                                  };
     
-    [self shortenURL:url parameters:parameters withCompletionBlock:completionBlock];
+    return [self shortenURL:url parameters:parameters withCompletionBlock:completionBlock];
 }
 
-+ (void)shortenURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^)(NSURL *shortenedURL, NSError *error))completionBlock {
++ (NSURLSessionTask *)shortenURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^ __nullable)(NSURL *shortenedURL, NSError *error))completionBlock {
     if (!url || !username.length || !apiKey.length) {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"Required parameters not provided."};
         NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
         if (completionBlock) {
             completionBlock(nil, error);
         }
-        return;
+        return nil;
     }
     
     NSDictionary *parameters = @{
@@ -66,17 +66,17 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
                                 SSTBitlyFormatParameter: SSTBitlyFormat
                                 };
     
-    [self shortenURL:url parameters:parameters withCompletionBlock:completionBlock];
+    return [self shortenURL:url parameters:parameters withCompletionBlock:completionBlock];
 }
 
-+ (void)expandURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^)(NSURL *expandedURL, NSError *error))completionBlock {
++ (NSURLSessionTask *)expandURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^ __nullable)(NSURL *expandedURL, NSError *error))completionBlock {
     if (!url || !accessToken.length) {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"Required parameters not provided."};
         NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
         if (completionBlock) {
             completionBlock(nil, error);
         }
-        return;
+        return nil;
     }
     
     NSDictionary *parameters =@{
@@ -85,17 +85,17 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
                                 SSTBitlyFormatParameter: SSTBitlyFormat
                                 };
     
-    [self expandURL:url parameters:parameters withCompletionBlock:completionBlock];
+    return [self expandURL:url parameters:parameters withCompletionBlock:completionBlock];
 }
 
-+ (void)expandURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^)(NSURL *expandedURL, NSError *error))completionBlock {
++ (NSURLSessionTask *)expandURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^ __nullable)(NSURL *expandedURL, NSError *error))completionBlock {
     if (!url || !username.length || !apiKey.length) {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"Required parameters not provided."};
         NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
         if (completionBlock) {
             completionBlock(nil, error);
         }
-        return;
+        return nil;
     }
     
     NSDictionary *parameters =@{
@@ -105,18 +105,18 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
                                 SSTBitlyFormatParameter: SSTBitlyFormat
                                 };
     
-    [self expandURL:url parameters:parameters withCompletionBlock:completionBlock];
+    return [self expandURL:url parameters:parameters withCompletionBlock:completionBlock];
 }
 
 #pragma mark - Private
 #pragma mark -
 
-+ (void)shortenURL:(NSURL *)url parameters:(NSDictionary *)parameters withCompletionBlock:(void (^)(NSURL *shortenedURL, NSError *error))completionBlock {
++ (NSURLSessionTask *)shortenURL:(NSURL *)url parameters:(NSDictionary *)parameters withCompletionBlock:(void (^ __nullable)(NSURL *shortenedURL, NSError *error))completionBlock {
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@", SSTBitlyBaseURL, SSTBitlyShortenPath];
     NSURL *apiurl = [NSURL URLWithString:urlString];
     
-    [self fetchJsonRequestWithURL:apiurl params:parameters withCompletionBlock:^(id response, NSError *error) {
+    return [self fetchJsonRequestWithURL:apiurl params:parameters withCompletionBlock:^(id response, NSError *error) {
         if (error) {
             NSDictionary *userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"Failure while shortening URL", @"Error message while shortening URL")};
             NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
@@ -148,15 +148,14 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
             
         }
     }];
-    
 }
 
-+ (void)expandURL:(NSURL *)url parameters:(NSDictionary *)parameters withCompletionBlock:(void (^)(NSURL *expandedURL, NSError *error))completionBlock {
++ (NSURLSessionTask *)expandURL:(NSURL *)url parameters:(NSDictionary *)parameters withCompletionBlock:(void (^ __nullable)(NSURL *expandedURL, NSError *error))completionBlock {
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@", SSTBitlyBaseURL, SSTBitlyExpandPath];
     NSURL *apiurl = [NSURL URLWithString:urlString];
     
-    [self fetchJsonRequestWithURL:apiurl params:parameters withCompletionBlock:^(id response, NSError *error) {
+    return [self fetchJsonRequestWithURL:apiurl params:parameters withCompletionBlock:^(id response, NSError *error) {
         if (error) {
             NSDictionary *userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"Failure while expanding URL", @"Error message while shortening URL")};
             NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
@@ -189,23 +188,75 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
     }];
 }
 
-+ (void)fetchJsonRequestWithURL:(NSURL *)url params:(NSDictionary *)params withCompletionBlock:(void (^)(id response, NSError *error))completionBlock {
++ (NSURLSessionTask *)fetchJsonRequestWithURL:(NSURL *)url params:(NSDictionary *)params withCompletionBlock:(void (^ __nullable)(id response, NSError *error))completionBlock {
     if (!completionBlock) {
-        return;
+        return nil;
     }
     
-    AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
-    NSError *error;
-    NSMutableURLRequest *request = [requestSerializer requestWithMethod:@"GET" URLString:[url absoluteString] parameters:params error:&error];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    request.timeoutInterval = 10.0;
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id response) {
-        completionBlock(response, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        completionBlock(nil, error);
+    url = [self appendQueryParameters:params toURL:url];
+    
+    if (session == nil) {
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
+    }
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    request.HTTPMethod = @"GET";
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error != nil) {
+            completionBlock(nil, error);
+        }
+        else {
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+            
+            // return to main queue from background
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (error != nil) {
+                    completionBlock(nil, error);
+                }
+                else if ([json isKindOfClass:[NSDictionary class]]) {
+                    completionBlock(json, nil);
+                }
+                else {
+                    NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"Unexpected Response"};
+                    NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
+                    completionBlock(nil, error);
+                }
+            });
+        }
     }];
-    [operation start];
+    [task resume];
+    
+    return task;
+}
+
++ (NSURL *)appendQueryParameters:(NSDictionary *)params toURL:(NSURL *)url {
+    NSURLComponents *components = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO];
+    
+    NSMutableArray<NSURLQueryItem *> *queryItems = @[].mutableCopy;
+    
+    for (NSString *name in params) {
+        NSObject *parameterValue = params[name];
+        
+        NSURLQueryItem *item = nil;
+        
+        if ([parameterValue isKindOfClass:[NSString class]]) {
+            item = [[NSURLQueryItem alloc] initWithName:name value:params[name]];
+        }
+        else if ([parameterValue respondsToSelector:@selector(stringValue)]) {
+            item = [[NSURLQueryItem alloc] initWithName:name value:[params[name] stringValue]];
+        }
+        
+        if (item) {
+            [queryItems addObject:item];
+        }
+    }
+    
+    components.queryItems = queryItems;
+    
+    return components.URL;
 }
 
 @end

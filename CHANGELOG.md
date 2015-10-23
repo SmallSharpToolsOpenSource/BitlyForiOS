@@ -24,3 +24,9 @@ Added support to expaned a shortened URL
 
 Added support for using an access token
 
+## 1.3.0
+
+* Modernized project for Xcode 7
+* Added automated tests to cover supported features
+* Set iOS 8.4 as the baseline
+* Eliminated AFNetworking as a dependency
