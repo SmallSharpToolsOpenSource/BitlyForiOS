@@ -28,11 +28,18 @@ NSString * const SSTURL = @"url";
 
 @implementation SSTViewController
 
+#pragma mark - View Lifecycle
+#pragma mark -
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.shortenedURLLabel.text = nil;
     [self loadSettings];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - User Actions

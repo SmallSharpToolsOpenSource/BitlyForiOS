@@ -49,6 +49,7 @@
         [SSTURLShortener expandURL:shortenedURL username:_username apiKey:_apiKey withCompletionBlock:^(NSURL *expandedURL, NSError *error) {
             XCTAssertNil(error);
             XCTAssertNotNil(expandedURL);
+            XCTAssert([url isEqual:expandedURL]);
             NSLog(@"expandedURL: %@", expandedURL);
             
             [expectation fulfill];
@@ -73,6 +74,7 @@
         [SSTURLShortener expandURL:shortenedURL accessToken:_accessToken withCompletionBlock:^(NSURL *expandedURL, NSError *error) {
             XCTAssertNil(error);
             XCTAssertNotNil(expandedURL);
+            XCTAssert([url isEqual:expandedURL]);
             NSLog(@"expandedURL: %@", expandedURL);
             
             [expectation fulfill];
