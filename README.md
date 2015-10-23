@@ -3,7 +3,7 @@ Bitly for iOS
 
 <img src="https://raw.github.com/brennanMKE/BitlyForiOS/master/URLShortener.png" width="220" align="right" />
 
-URL Shortener using Bitly with AFNetworking
+URL Shortener using Bitly
 
 ### What does it do and why?
 
@@ -24,16 +24,7 @@ it simply add the following line to your Podfile:
 
 or
 
-    pod 'BitlyForiOS', :git => 'https://github.com/brennanMKE/BitlyForiOS.git', :tag => '1.2'
-
-### Requirements
-
-URL Shortener uses [AFNetworking](http://afnetworking.com/) which is available on [GitHub](https://github.com/AFNetworking/AFNetworking). Follow instructions for AFNetworking to include it in your project.
-
-### Why AFNetworking?
-
-AFNetworking automatically handles url encoding and parses the JSON results so no additional work is necessary. This library also
-uses AFNetworking 2.0. Since most projects already use AFNetworking it made sense to leverage it.
+    pod 'BitlyForiOS', :git => 'https://github.com/brennanMKE/BitlyForiOS.git', :tag => '1.3'
 
 ### Sample Project
 
