@@ -472,6 +472,7 @@
 				GCC_PREFIX_HEADER = "BitlyForiOS/BitlyForiOS-Prefix.pch";
 				INFOPLIST_FILE = "BitlyForiOS/BitlyForiOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smallsharptools.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -487,6 +488,7 @@
 				GCC_PREFIX_HEADER = "BitlyForiOS/BitlyForiOS-Prefix.pch";
 				INFOPLIST_FILE = "BitlyForiOS/BitlyForiOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smallsharptools.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
