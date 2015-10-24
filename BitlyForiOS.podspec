@@ -11,15 +11,14 @@ A Bitly link shortener which can shorten and expand URLs.
 
   s.homepage     = "https://github.com/brennanMKE/BitlyForiOS"
 
-  s.license      = 'MIT'
+  s.license      = 'Apache 2'
 
   s.author             = { "Brennan Stehling" => "brennan@smallsharptools.com" }
   s.social_media_url = "http://twitter.com/smallsharptools"
 
   s.platform     = :ios, '8.4'
   s.source       = { :git => "https://github.com/brennanMKE/BitlyForiOS.git", :tag => "1.3.0" }
-  s.source_files  = 'Common/**/*.{h,m}'
+  s.source_files  = '**/SSTURLShortener.{h,m}'
   s.requires_arc = true
 
 end
-
