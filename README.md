@@ -11,7 +11,8 @@ The `SSTURLShortener` class included in this project uses the Bitly service to s
 
 ### How to Use
 
-Everything is in a single class named `SSTURLShortener` which you can find in the Xcode project. You can copy the header and implementation file into your Xcode project and use directly. Alternatively you coudl use `CocoaPods` or `Carthage` which are explained below.
+Everything is in a single class named `SSTURLShortener` which you can find in the Xcode project. You can copy the header and implementation file into your Xcode project and use directly. Alternatively you coudl use `CocoaPods` or `Carthage` which are 
+explained below.
 
 The `SSTURLShortener` class has a single static method which takes the original URL, username, API key and a completion block. The username and API key come from your Bitly account. (See Legacy API Key under [Advanced Settings](https://bitly.com/a/settings/advanced)) If the same URL is shortened it may benefit from the return value already being cached as the request uses the `NSURLRequestReturnCacheDataElseLoad` caching policy.
 
@@ -36,7 +37,7 @@ or
 
 Carthage is the modern alternative to CocoaPods which acts as a wrapper around the standard
 `xcodebuild` command-line utility to build frameworks for iOS and OS X. See more from
-(Carthage)[https://github.com/Carthage/Carthage] on how to install the utility and how to
+[Carthage](https://github.com/Carthage/Carthage) on how to install the utility and how to
 build and add frameworks to your Xcode project. Below are the configurations you can add
 to your project's Cartfile. 
 
@@ -47,7 +48,7 @@ or
     github "brennanMKE/BitlyForiOS" "master"
 
 The addition of `master` specifies the master branch. You can also specify a tag
-or commit hash if you choose. Read more (Carthage)[https://github.com/Carthage/Carthage] for configuration details.
+or commit hash if you choose. Read more [Carthage](https://github.com/Carthage/Carthage) for configuration details.
 
 ### Sample Project
 

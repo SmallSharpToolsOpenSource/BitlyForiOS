@@ -30,3 +30,9 @@ Added support for using an access token
 * Added automated tests to cover supported features
 * Set iOS 8.4 as the baseline
 * Eliminated AFNetworking as a dependency
+
+## 1.4.0
+
+* Simplified use of NSURLSession
+* Prepared support for Carthage
+* Updated README to cover Carthage
