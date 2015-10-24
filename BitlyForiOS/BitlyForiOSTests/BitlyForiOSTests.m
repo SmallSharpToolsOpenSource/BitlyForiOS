@@ -35,6 +35,15 @@
     [super tearDown];
 }
 
+- (void)testRequiredUserDefaults {
+    // Note: Use the sample app once to set the user defaults which are required for these tests.
+    // It is necessary for each iOS Simulator or device you want to test.
+    
+    XCTAssertNotNil(_username, @"Username must be defined by test app");
+    XCTAssertNotNil(_apiKey, @"API Key must be defined by test app");
+    XCTAssertNotNil(_accessToken, @"Access token must be defined by test app");
+}
+
 - (void)testAPIKeyShrinkAndExpand {
     XCTAssertNotNil(_username, @"Username must be defined by test app");
     XCTAssertNotNil(_apiKey, @"API Key must be defined by test app");
