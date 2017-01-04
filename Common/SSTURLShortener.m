@@ -190,16 +190,11 @@ static NSURLSession *session;
     
     url = [self appendQueryParameters:params toURL:url];
     
-    if (session == nil) {
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
-    }
-    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     request.HTTPMethod = @"GET";
     
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error != nil) {
             completionBlock(nil, error);
         }
