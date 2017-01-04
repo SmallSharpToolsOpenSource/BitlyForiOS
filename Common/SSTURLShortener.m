@@ -30,7 +30,7 @@ NSString * const SSTBitlyLongURLKey                = @"long_url";
 
 static NSURLSession *session;
 
-+ (NSURLSessionTask *)shortenURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^ __nullable)(NSURL *shortenedURL, NSError *error))completionBlock {
++ (NSURLSessionTask *)shortenURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^)(NSURL *shortenedURL, NSError *error))completionBlock {
     if (!url || !accessToken.length) {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"Required parameters not provided."};
         NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
@@ -49,7 +49,7 @@ static NSURLSession *session;
     return [self shortenURL:url parameters:parameters withCompletionBlock:completionBlock];
 }
 
-+ (NSURLSessionTask *)shortenURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^ __nullable)(NSURL *shortenedURL, NSError *error))completionBlock {
++ (NSURLSessionTask *)shortenURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^)(NSURL *shortenedURL, NSError *error))completionBlock {
     if (!url || !username.length || !apiKey.length) {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"Required parameters not provided."};
         NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
@@ -69,7 +69,7 @@ static NSURLSession *session;
     return [self shortenURL:url parameters:parameters withCompletionBlock:completionBlock];
 }
 
-+ (NSURLSessionTask *)expandURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^ __nullable)(NSURL *expandedURL, NSError *error))completionBlock {
++ (NSURLSessionTask *)expandURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^)(NSURL *expandedURL, NSError *error))completionBlock {
     if (!url || !accessToken.length) {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"Required parameters not provided."};
         NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];
@@ -88,7 +88,7 @@ static NSURLSession *session;
     return [self expandURL:url parameters:parameters withCompletionBlock:completionBlock];
 }
 
-+ (NSURLSessionTask *)expandURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^ __nullable)(NSURL *expandedURL, NSError *error))completionBlock {
++ (NSURLSessionTask *)expandURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^)(NSURL *expandedURL, NSError *error))completionBlock {
     if (!url || !username.length || !apiKey.length) {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"Required parameters not provided."};
         NSError *error = [NSError errorWithDomain:@"Bitly" code:101 userInfo:userInfo];

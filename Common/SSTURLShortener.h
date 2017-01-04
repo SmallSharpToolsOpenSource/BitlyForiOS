@@ -10,12 +10,12 @@
 
 @interface SSTURLShortener : NSObject
 
-+ (NSURLSessionTask *)shortenURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^)(NSURL *shortenedURL, NSError *error))completionBlock;
++ (nullable NSURLSessionTask *)shortenURL:(nullable NSURL *)url accessToken:(nullable NSString *)accessToken withCompletionBlock:(void (^ __nullable)(NSURL * _Nullable shortenedURL, NSError * _Nullable error))completionBlock;
 
-+ (NSURLSessionTask *)shortenURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^)(NSURL *shortenedURL, NSError *error))completionBlock;
++ (nullable NSURLSessionTask *)shortenURL:(nullable NSURL *)url username:(nullable NSString *)username apiKey:(nullable NSString *)apiKey withCompletionBlock:(void (^ __nullable)(NSURL * _Nullable shortenedURL, NSError * _Nullable error))completionBlock;
 
-+ (NSURLSessionTask *)expandURL:(NSURL *)url accessToken:(NSString *)accessToken withCompletionBlock:(void (^)(NSURL *expandedURL, NSError *error))completionBlock;
++ (nullable NSURLSessionTask *)expandURL:(nullable NSURL *)url accessToken:(nullable NSString *)accessToken withCompletionBlock:(void (^ __nullable)(NSURL * _Nullable expandedURL, NSError * _Nullable error))completionBlock;
 
-+ (NSURLSessionTask *)expandURL:(NSURL *)url username:(NSString *)username apiKey:(NSString *)apiKey withCompletionBlock:(void (^)(NSURL *expandedURL, NSError *error))completionBlock;
++ (nullable NSURLSessionTask *)expandURL:(nullable NSURL *)url username:(nullable NSString *)username apiKey:(nullable NSString *)apiKey withCompletionBlock:(void (^ __nullable)(NSURL * _Nullable expandedURL, NSError * _Nullable error))completionBlock;
 
 @end
