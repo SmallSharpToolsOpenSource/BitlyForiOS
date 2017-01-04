@@ -126,11 +126,7 @@ static NSURLSession *session;
         }
         else {
             NSDictionary *dictionary = (NSDictionary *)response;
-            
             if ([@"OK" isEqualToString:dictionary[SSTBitlyStatusTextKey]]) {
-                NSString *longUrlString = dictionary[SSTBitlyDataKey][SSTBitlyLongURLKey];
-#pragma unused (longUrlString)
-                NSCAssert([url.absoluteString isEqualToString:longUrlString], @"Returned Long URL must match given Long URL");
                 NSString *shortenedUrlString = dictionary[SSTBitlyDataKey][SSTBitlyURLKey];
                 NSURL *shortenedURL = [NSURL URLWithString:shortenedUrlString];
                 if (completionBlock) {
@@ -145,7 +141,6 @@ static NSURLSession *session;
                     completionBlock(nil, error);
                 }
             }
-            
         }
     }];
 }
