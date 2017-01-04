@@ -36,3 +36,7 @@ Added support for using an access token
 * Simplified use of NSURLSession
 * Prepared support for Carthage
 * Updated README to cover Carthage
+
+## 1.4.1
+
+* Added nullability annotations to support Swift

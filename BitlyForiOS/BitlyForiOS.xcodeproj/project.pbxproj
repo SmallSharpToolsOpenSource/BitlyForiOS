@@ -21,12 +21,12 @@
 		2646BCC3178DF72800F4286C /* BitlyForiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCC2178DF72800F4286C /* BitlyForiOSTests.m */; };
 		2646BCF0178DF8C400F4286C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BCEE178DF8C400F4286C /* MobileCoreServices.framework */; };
 		2646BCF1178DF8C400F4286C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2646BCEF178DF8C400F4286C /* SystemConfiguration.framework */; };
-		268A1AAC1BDB028600B296A7 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268A1AAB1BDB028600B296A7 /* Launch.storyboard */; settings = {ASSET_TAGS = (); }; };
+		268A1AAC1BDB028600B296A7 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268A1AAB1BDB028600B296A7 /* Launch.storyboard */; };
 		268A1AB51BDB06E100B296A7 /* BitlyForiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 268A1AB41BDB06E100B296A7 /* BitlyForiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		268A1AC71BDB06E100B296A7 /* BitlyForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268A1AB21BDB06E100B296A7 /* BitlyForiOS.framework */; };
 		268A1AC81BDB06E100B296A7 /* BitlyForiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 268A1AB21BDB06E100B296A7 /* BitlyForiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		268A1AD01BDB070F00B296A7 /* SSTURLShortener.h in Headers */ = {isa = PBXBuildFile; fileRef = 2646BCF5178E081C00F4286C /* SSTURLShortener.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		268A1AD11BDB071400B296A7 /* SSTURLShortener.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCF6178E081C00F4286C /* SSTURLShortener.m */; settings = {ASSET_TAGS = (); }; };
+		268A1AD11BDB071400B296A7 /* SSTURLShortener.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646BCF6178E081C00F4286C /* SSTURLShortener.m */; };
 		268A1AD21BDB086D00B296A7 /* BitlyForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268A1AB21BDB06E100B296A7 /* BitlyForiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -649,6 +649,7 @@
 				268A1ACB1BDB06E100B296A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
